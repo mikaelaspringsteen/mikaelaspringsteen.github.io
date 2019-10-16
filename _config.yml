@@ -1,10 +1,10 @@
 baseurl:
-title: Tufte-Jekyll
-subtitle: Content-centric blogging
-author: clay harmon
-simple_search: http://google.com/search
-description: A Jekyll theme for content-rich sites
-name: tufte
+title: Mikaela Springsteen
+subtitle:
+author: Mikaela Springsteen
+simple_search: http://duckduckgo.com
+description:
+name:
 markdown: kramdown
 markdown_ext: "markdown,mkdown,mkdn,mkd,md"
 permalink: /articles/:short_year/:title
@@ -24,4 +24,4 @@ transfer:
   command: rsync
   settings: -av
   source: _site/
-  destination: ~/Git/clayh53.github.com/
+  destination: ~/Git/mikaelaspringsteen.github.com/

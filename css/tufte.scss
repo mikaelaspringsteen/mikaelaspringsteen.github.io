@@ -51,7 +51,7 @@ html{
 
 @media screen and (min-width: 1200px){ html{ font-size: 16px; } }
 
-@media screen and (min-width: 1300px){ html{ font-size: 17px; } }
+@media screen and (min-width: 1300px){ html{ font-size: 16px; } }
 
 // sets link style according to values in _settings.scss
 .mathblock{
@@ -356,13 +356,14 @@ header > nav  a{
   padding-top: 1.5rem;
   text-decoration: none;
   display: inline-block;
-  float: left;
+  float: right;
   margin-top: 0;
   margin-bottom: 0;
   padding-right: 2rem;
-  //margin-left: 1rem;
+  margin-left: -1rem;
   vertical-align: baseline;
 }
+
 header > nav a img{
   height: 5rem;
   position: relative;
@@ -595,3 +596,55 @@ hr.slender {
   content: "\e60e";
 }
 /*-- End of Icomoon icon font section --*/
+
+/*-- Home image section --*/
+
+div.home-image {
+    padding: 0;
+    margin-left: 20px;
+    margin-top: 20px;
+    max-width: 85%;
+}
+
+/*-- Maker text --*/
+
+div.maker {
+  text-align: center;
+}
+
+/*-- Gallery styling section (from https://www.w3schools.com/howto/howto_css_image_grid_responsive.asp)--*/
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0 4px;
+}
+
+/* Create four equal columns that sits next to each other */
+.column {
+  flex: 28%;
+  max-width: 28%;
+  padding: 0 4px;
+}
+
+.column img {
+  margin-top: 8px;
+  vertical-align: middle;
+  width: 100%;
+}
+
+/* Responsive layout - makes a two column-layout instead of four columns */
+@media screen and (max-width: 800px) {
+  .column {
+    flex: 40%;
+    max-width: 40%;
+  }
+}
+
+/* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .column {
+    flex: 80%;
+    max-width: 80%;
+  }
+}
