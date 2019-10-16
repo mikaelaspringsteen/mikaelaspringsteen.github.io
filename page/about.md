@@ -12,7 +12,7 @@ I have a very hard time sitting with an unanswered question. Thankfully, through
 
 With a background in the arts, I also work on a number of more artistic projects, including in cooking, baking, watercolor, photography, and woodworking.
 
-If you are looking to get in touch, feel free to contact me by [email](mailto:contactmspringsteen@gmail.com).
+If you are looking to get in touch, feel free to contact me by <a href="mailto:contactmspringsteen@gmail.com">email</a>.
 
 {% newthought "See a selection" %} of my favorite projects below.
 
