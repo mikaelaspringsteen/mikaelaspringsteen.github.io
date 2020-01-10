@@ -19,8 +19,8 @@ Luckily, reordering boxplots is simple in ggplot2. Below, I have used sample dat
 
 ``` R
 library(tidyverse)
- library(ggthemes)
- data(iris)
+library(ggthemes)
+data(iris)
 ```
 
 Creating a boxplot will result in levels being arranged just as they are in the dataset:
