@@ -35,17 +35,6 @@ A quantitative investigation of the economy constructed in a series of ongoing, 
 Data collection is currently ongoing for this project. Preliminary analysis has begun.
 
 <br>
-<br>
-<br>
-
-## Christmas Cake
-{% marginfigure "christmascake-id" "assets/img/about/christmascake.jpg" %} December 2018
-
-A multi-tiered cake created for the Edinburgh Estonian Society's 2018 Christmas party, accompanied by an assortment of filled and unfilled sugar cookies.
-
-A classic hummingbird cake, filled and iced with browned buttercream frosting. Sandwich cookies were filled with raspberry jam.
-
-<br>
 
 ## Worthy: A value theory approach to the use of authenticity in art
 2017 - 2018
