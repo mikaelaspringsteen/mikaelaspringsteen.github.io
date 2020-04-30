@@ -66,5 +66,3 @@ Gouache on board
 A four tier hummingbird cake decorated exclusively with chocolate. This cake took as its inspiration "The Day the Saucers Came" by Neil Gaiman. It was meant to be 'read' from the top down, in the same way in you would read the original poem.
 
 The cake was filled with cream cheese custard, iced with a browned buttercream frosting, and covered with dark, milk, and white chocolate.
-
-Winner of the Grand Prize at the 2015 BCA Chocolate Competition.
