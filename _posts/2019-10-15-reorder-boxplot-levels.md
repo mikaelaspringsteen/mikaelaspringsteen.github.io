@@ -5,7 +5,7 @@ date: 2019-10-15
 categories: R
 ---
 
-{% newthought "When examining data," %} one of the first things I like to do is take a look at the distribution of the various variables, as well as their various interactions. Yet as anyone who has worked with data will be able to tell you, this is often much easier said than done.
+When examining data one of the first things I like to do is take a look at the distribution of the various variables, as well as their various interactions. Yet as anyone who has worked with data will be able to tell you, this is often much easier said than done.
 
 <!--more--> Recently, while working with a particularly large dataset, I ran into a large number of factor variables, each with over 40 levels, and wanted to quickly break down the distribution of a particular continuous variable for each of these levels.
 
@@ -35,6 +35,8 @@ ggplot(iris, aes(x = Species, y = Sepal.Width)) +
   theme_fivethirtyeight() +
   theme(axis.title = element_text())
 ```
+<br/>
+<br/>
 {% maincolumn "assets/img/posts/2019-10-15/boxplot_a.png" %}
 
 But, by including the `reorder()` function in the appropriate aesthetics argument, the order of the levels can be quickly and simply set to any function desired. Here, I've used the median:
@@ -50,6 +52,8 @@ ggplot(iris, aes(x = reorder(Species, Sepal.Width, median), y = Sepal.Width)) +
   theme_fivethirtyeight() +
   theme(axis.title = element_text())
 ```
+<br/>
+<br/>
 {% maincolumn "assets/img/posts/2019-10-15/boxplot_b.png" %}
 
 {% marginfigure "marginfig-2" "assets/img/posts/2019-10-15/neat_boxplot.png" "Much better" %}This quickly highlights those levels at the high and low ends of the spectrum, and allows easy comparison of those levels which are more similar.

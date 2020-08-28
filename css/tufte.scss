@@ -45,7 +45,7 @@ html{
 
 @media screen and (min-width: 900px){ html{ font-size: 13px;} }
 
-@media screen and (min-width: 1000px){ html{ font-size: 14px;} }
+@media screen and (min-width: 1000px){ html{ font-size: 15px;} }
 
 @media screen and (min-width: 1100px){ html{ font-size: 15px; } }
 
@@ -597,6 +597,13 @@ hr.slender {
 }
 /*-- End of Icomoon icon font section --*/
 
+/*-- GNU styling --*/
+
+.GNU{
+  text-align: center;
+  font-family: $sans-font;
+}
+
 /*-- Home image section --*/
 
 div.home-image {
@@ -648,3 +655,64 @@ div.maker {
     max-width: 80%;
   }
 }
+
+/* MODAL */
+
+.modalWindow {
+position: fixed;
+font-family: $body-font;
+font-style: normal;
+font-size:80%;
+top: 0;
+right: 0;
+bottom: 0;
+left: 0;
+background: rgba(0,0,0,0.2);
+z-index: 99999;
+opacity:0;
+-webkit-transition: opacity 400ms ease-in;
+-moz-transition: opacity 400ms ease-in;
+transition: opacity 400ms ease-in;
+pointer-events: none;
+}
+.modalWindow:target {
+opacity:1;
+pointer-events: auto;
+}
+.modalWindow > div {
+width: 750px;
+position: relative;
+margin: 10% auto;
+-webkit-border-radius: 5px;
+-moz-border-radius: 5px;
+border-radius: 5px;
+background: $bg-color;
+}
+.modalWindow .modalContent {
+    padding: 30px 30px 30px 30px;
+}
+.modalWindow .modalContent .modalText{
+    width: 100%;
+}
+.modalWindow .modalContent .modalImage{
+    padding: 20px 30px 20px 20px;
+}
+.close {
+background: $border-color;
+color: $bg-color;
+line-height: 25px;
+text-align: center;
+text-decoration: none;
+font-weight: bold;
+-webkit-border-radius: 2px;
+-moz-border-radius: 2px;
+border-radius: 2px;
+position: absolute;
+right: 10px;
+top: 10px;
+width: 35px;
+height: 24px;
+font-size: 12px;
+}
+.close:hover { background: $contrast-color; }
+.clear { float:none; clear: both; }
