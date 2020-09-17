@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Reordering Boxplot Levels</title>
+  <meta name="description" content="When examining data one of the first things I like to do is take a look at the distribution of the various variables, as well as their various interactions. ...">
+
+  <!-- Google Fonts loaded here depending on setting in _data/options.yml true loads font, blank does not-->
+  
+    <link href='//fonts.googleapis.com/css?family=Lato:400,400italic' rel='stylesheet' type='text/css'>
+  
+
+  <!-- Load up MathJax script if needed ... specify in /_data/options.yml file-->
+  
+    <script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+  <link rel="stylesheet" type="text/css" href="/css/tufte.css">
+  <!-- <link rel="stylesheet" type="text/css" href="/css/print.css" media="print"> -->
+
+  <link rel="canonical" href="/articles/19/reorder-boxplot-levels">
+
+  <link rel="alternate" type="application/rss+xml" title="Mikaela Springsteen" href="/feed.xml" />
+
+  
+
+    
+</head>
+
+  <body>
+    <!--- Header and nav template site-wide -->
+<header>
+    <nav class="group">
+    
+	
+		
+  	
+		
+		    
+		      <a href="/css/print.css"></a>
+		    
+	    
+  	
+		
+  	
+		
+		    
+		      <a href="/page/about">About</a>
+		    
+	    
+  	
+		
+		    
+		      <a href="/page/maker">Maker</a>
+		    
+	    
+  	
+		
+		    
+		      <a href="/researcher">Researcher</a>
+		    
+	    
+  	
+		
+		    
+		      <a href="/">Home</a>
+		    
+	    
+  	
+	</nav>
+</header>
+
+    <article class="group">
+      <h1>Reordering Boxplot Levels</h1>
+<p class="subtitle">October 15, 2019</p>
+
+<p>When examining data one of the first things I like to do is take a look at the distribution of the various variables, as well as their various interactions. Yet as anyone who has worked with data will be able to tell you, this is often much easier said than done.</p>
+
+<!--more-->
+<p>Recently, while working with a particularly large dataset, I ran into a large number of factor variables, each with over 40 levels, and wanted to quickly break down the distribution of a particular continuous variable for each of these levels.</p>
+
+<p>Density plots quickly become illegible with more than a few levels overlaid at once and so were immediately ruled out. <label for="sn-id-1" class="margin-toggle sidenote-number"></label><input type="checkbox" id="sn-id-1" class="margin-toggle" /><span class="sidenote">Granted, you could split the levels into multiple plots, but that doesn’t exactly simplify comparison of distributions. </span></p>
+
+<p><label for="marginfig-1" class="margin-toggle">⊕</label><input type="checkbox" id="marginfig-1" class="margin-toggle" /><span class="marginnote"><img class="fullwidth" src="/assets/img/posts/2019-10-15/messy_boxplot.png" /><br />A small exerpt of the headache-inducing boxplot first generated from my data</span> Boxplots seemed the more reasonable option, but with so many levels present for each variable they could just as easily become a confusing mess if not ordered in some way. (Remember, the goal here is to get a quick overview of the relative distributions—something which becomes difficult if the eye is confused by a large number of unordered boxplots.)</p>
+
+<p>Luckily, reordering boxplots is simple in ggplot2. Below, I have used sample data to detail the process.</p>
+
+<h2 id="reordering-boxplots-in-ggplot2">Reordering boxplots in ggplot2</h2>
+
+<div class="language-R highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">library</span><span class="p">(</span><span class="n">tidyverse</span><span class="p">)</span><span class="w">
+</span><span class="n">library</span><span class="p">(</span><span class="n">ggthemes</span><span class="p">)</span><span class="w">
+</span><span class="n">data</span><span class="p">(</span><span class="n">iris</span><span class="p">)</span><span class="w">
+</span></code></pre></div></div>
+
+<p>Creating a boxplot will result in levels being arranged just as they are in the dataset:</p>
+
+<div class="language-R highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">ggplot</span><span class="p">(</span><span class="n">iris</span><span class="p">,</span><span class="w"> </span><span class="n">aes</span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Species</span><span class="p">,</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Sepal.Width</span><span class="p">))</span><span class="w"> </span><span class="o">+</span><span class="w">
+  </span><span class="n">geom_boxplot</span><span class="p">(</span><span class="n">alpha</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">.4</span><span class="p">,</span><span class="w"> </span><span class="n">outlier.alpha</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">.4</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w">
+  </span><span class="n">labs</span><span class="p">(</span><span class="w">
+    </span><span class="n">title</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"Distribution of Sepal Width by Iris Species"</span><span class="p">,</span><span class="w">
+    </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"Species"</span><span class="p">,</span><span class="w">
+    </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"Sepal Width"</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w">
+  </span><span class="n">theme_fivethirtyeight</span><span class="p">()</span><span class="w"> </span><span class="o">+</span><span class="w">
+  </span><span class="n">theme</span><span class="p">(</span><span class="n">axis.title</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">element_text</span><span class="p">())</span><span class="w">
+</span></code></pre></div></div>
+<p><br />
+<br /></p>
+<figure><figcaption></figcaption><img src="/assets/img/posts/2019-10-15/boxplot_a.png" /></figure>
+
+<p>But, by including the <code class="highlighter-rouge">reorder()</code> function in the appropriate aesthetics argument, the order of the levels can be quickly and simply set to any function desired. Here, I’ve used the median:</p>
+
+<div class="language-R highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">ggplot</span><span class="p">(</span><span class="n">iris</span><span class="p">,</span><span class="w"> </span><span class="n">aes</span><span class="p">(</span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">reorder</span><span class="p">(</span><span class="n">Species</span><span class="p">,</span><span class="w"> </span><span class="n">Sepal.Width</span><span class="p">,</span><span class="w"> </span><span class="n">median</span><span class="p">),</span><span class="w"> </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Sepal.Width</span><span class="p">))</span><span class="w"> </span><span class="o">+</span><span class="w">
+  </span><span class="n">geom_boxplot</span><span class="p">(</span><span class="n">alpha</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">.4</span><span class="p">,</span><span class="w"> </span><span class="n">outlier.alpha</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">.4</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w">
+  </span><span class="n">labs</span><span class="p">(</span><span class="w">
+    </span><span class="n">title</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"Distribution of Sepal Width by Iris Species"</span><span class="p">,</span><span class="w">
+    </span><span class="n">subtitle</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"arranged by median sepal width"</span><span class="p">,</span><span class="w">
+    </span><span class="n">x</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"Species"</span><span class="p">,</span><span class="w">
+    </span><span class="n">y</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"Sepal Width"</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w">
+  </span><span class="n">theme_fivethirtyeight</span><span class="p">()</span><span class="w"> </span><span class="o">+</span><span class="w">
+  </span><span class="n">theme</span><span class="p">(</span><span class="n">axis.title</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">element_text</span><span class="p">())</span><span class="w">
+</span></code></pre></div></div>
+<p><br />
+<br /></p>
+<figure><figcaption></figcaption><img src="/assets/img/posts/2019-10-15/boxplot_b.png" /></figure>
+
+<p><label for="marginfig-2" class="margin-toggle">⊕</label><input type="checkbox" id="marginfig-2" class="margin-toggle" /><span class="marginnote"><img class="fullwidth" src="/assets/img/posts/2019-10-15/neat_boxplot.png" /><br />Much better</span>This quickly highlights those levels at the high and low ends of the spectrum, and allows easy comparison of those levels which are more similar.</p>
+
+<p>The advantage of this method lies in allowing the order of the levels to remain unchanged in the dataset, while enabling the boxplots to be quickly reordered according to a number of different metrics, simply by including the appropriate function in the <code class="highlighter-rouge">reorder()</code> call.</p>
+
+
+    </article>
+    <span class="print-footer">Reordering Boxplot Levels - October 15, 2019 - Mikaela Springsteen</span>
+    <footer>
+  <hr class="slender">
+  <ul class="footer-links">
+    <li><a href="mailto:contactmspringsteen@gmail.com"><span class="icon-mail"></span></a></li>
+    
+      <li>
+        <a href="//github.com/mikaelaspringsteen"><span class="icon-github"></span></a>
+      </li>
+    
+      <li>
+        <a href="/feed"><span class="icon-feed"></span></a>
+      </li>
+    
+  </ul>
+<div class="credits">
+<span>&copy; 2020 &nbsp;&nbsp;MIKAELA SPRINGSTEEN</span></br> <br>
+<span>This site is built with <a href="//jekyllrb.com">Jekyll</a> on the <a href="//github.com/clayh53/tufte-jekyll">Tufte theme</a>.</span>
+</div>
+</footer>
+
+  </body>
+</html>
