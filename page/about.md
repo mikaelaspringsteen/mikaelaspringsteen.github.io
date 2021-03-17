@@ -8,11 +8,13 @@ order: 1
 
 {% newthought "I find answers" %}
 
-As a mixed methods social researcher studying quantification and valuation across social life, I am currently investigating compensatory payments, folk economics, and the intersection of folk science and literature.
+As a mixed methods researcher studying quantification and valuation across social life—and a Jr. Research Scientist at the NYU Wagner Graduate School of Public Service—I research the weird and wonderful ways that humans organize their lives.
+
+Current research topics include health insurance coverage, compensatory payments, folk economics, and the intersection of folk science and literature.
 
 {% newthought "I make things" %}
 
-With a background in the arts, I also work on a number of more artistically-minded projects in media including wood, watercolor, textile, food, and photography.
+With a background in the arts, I also work on a number of more artistically-minded projects, in media including wood, watercolor, and fiber.
 
 <br>
 

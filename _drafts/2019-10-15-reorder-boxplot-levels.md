@@ -5,7 +5,7 @@ date: 2019-10-15
 categories: R
 ---
 
-When examining data one of the first things I like to do is take a look at the distribution of the various variables, as well as their various interactions. Yet as anyone who has worked with data will be able to tell you, this is often much easier said than done.
+When examining data one of the first things I like to do is take a look at the distribution of the various variables, as well as their interactions. Yet as anyone who has worked with data will be able to tell you, this is often much easier said than done.
 
 <!--more--> Recently, while working with a particularly large dataset, I ran into a large number of factor variables, each with over 40 levels, and wanted to quickly break down the distribution of a particular continuous variable for each of these levels.
 
