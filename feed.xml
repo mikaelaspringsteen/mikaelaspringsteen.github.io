@@ -1,31 +1,110 @@
----
-layout: null
-nav_exclude: true
----
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>{{ site.title | xml_escape }}</title>
-    <description>{{ site.description | xml_escape }}</description>
-    <link>{{ site.url }}{{ site.baseurl }}/</link>
-    <atom:link href="{{ "/feed.xml" | prepend: site.baseurl | prepend: site.url }}" rel="self" type="application/rss+xml"/>
-    <pubDate>{{ site.time | date_to_rfc822 }}</pubDate>
-    <lastBuildDate>{{ site.time | date_to_rfc822 }}</lastBuildDate>
-    <generator>Jekyll v{{ jekyll.version }}</generator>
-    {% for post in site.posts limit:10 %}
+    <title>Mikaela Springsteen</title>
+    <description></description>
+    <link>/</link>
+    <atom:link href="/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Thu, 13 Apr 2023 21:30:59 -0400</pubDate>
+    <lastBuildDate>Thu, 13 Apr 2023 21:30:59 -0400</lastBuildDate>
+    <generator>Jekyll v4.2.2</generator>
+    
       <item>
-        <title>{{ post.title | xml_escape }}</title>
-        <description>{{ post.content | xml_escape }}</description>
-        <pubDate>{{ post.date | date_to_rfc822 }}</pubDate>
-        <link>{{ post.url | prepend: site.baseurl | prepend: site.url }}</link>
-        <guid isPermaLink="true">{{ post.url | prepend: site.baseurl | prepend: site.url }}</guid>
-        {% for tag in post.tags %}
-        <category>{{ tag | xml_escape }}</category>
-        {% endfor %}
-        {% for cat in post.categories %}
-        <category>{{ cat | xml_escape }}</category>
-        {% endfor %}
+        <title>BSFA Vector: 'Lies to Children'</title>
+        <description>&lt;p&gt;Based on a paper presented at the 2020 Pratchett Project Conference. Contributed to the British Science Fiction Association’s Vector blog.&lt;/p&gt;
+
+&lt;p&gt;&lt;span class=&quot;newthought&quot;&gt;Article&lt;/span&gt;  available &lt;a href=&quot;https://vector-bsfa.com/2021/03/16/lies-to-children-from-folk-to-formal-science-in-terry-pratchetts-discworld/&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
+</description>
+        <pubDate>Tue, 16 Mar 2021 00:00:00 -0400</pubDate>
+        <link>/articles/21/lies-to-children-vector</link>
+        <guid isPermaLink="true">/articles/21/lies-to-children-vector</guid>
+        
+        
+        <category>writing</category>
+        
+        <category>research</category>
+        
+        <category>Pratchett</category>
+        
       </item>
-    {% endfor %}
+    
+      <item>
+        <title>'Lies to Children': From folk to formal science in Terry Pratchett’s Discworld</title>
+        <description>&lt;p&gt;Presented at the 2020 Pratchett Project Conference.&lt;/p&gt;
+
+&lt;p&gt;&lt;span class=&quot;newthought&quot;&gt;Much has been written&lt;/span&gt;  about the incredible intertextuality and range of Terry Pratchett’s work, including his incorporation of classical literature, popular film, folk stories, music history, and even bawdy humor. Yet much remains to be explored in his works. This paper introduces an area of Pratchett Studies which has, as yet, remained largely unexplored: Pratchett’s treatment of the practice and culture of scientific disciplines. &lt;!--more--&gt;  Throughout his work, especially the Discworld series and associated texts, Pratchett constructs a dichotomy of scientific work. ‘Folk’ science—a term describing science learned and practiced informally—is epitomized by the practice of the witches, living as they do in the ‘real world’, while ‘formal’ science is reserved primarily for the wizards cloistered in the halls of Unseen University. Given the heroic status of the witches, it might therefore appear as though folk science is to be considered good and impactful, while formal science is, at best, entirely ineffectual. Yet ample evidence exists for a more complicated reading. Scientific advancements drive the plot in later novels, and others describe folk science as akin to a stepping stone on the path to formalized study. Other texts invoke formal scientific history and folklore with the same care and respect afforded more traditional folk stories. Science pervades this former science journalist’s work. As such, this paper seeks to introduce the many ways in which this science writing may be studied. How does Pratchett lead us to think about the practice and culture of science? Are certain sciences more beneficial than others? Are scientists to be admired or ignored? How is science ‘done’? And how, if at all, is it that science should be incorporated into daily life?&lt;/p&gt;
+
+&lt;p&gt;(abstract)&lt;/p&gt;
+</description>
+        <pubDate>Thu, 17 Sep 2020 00:00:00 -0400</pubDate>
+        <link>/articles/20/lies-to-children</link>
+        <guid isPermaLink="true">/articles/20/lies-to-children</guid>
+        
+        
+        <category>conference</category>
+        
+        <category>research</category>
+        
+        <category>Pratchett</category>
+        
+      </item>
+    
+      <item>
+        <title>Stop the Clocks</title>
+        <description>&lt;p&gt;Thoughts from the middle of an undending May, contributed to the Edinburgh Decameron project.&lt;/p&gt;
+
+&lt;p&gt;&lt;span class=&quot;newthought&quot;&gt;Article&lt;/span&gt;  available &lt;a href=&quot;https://blogs.ed.ac.uk/ed-decameron/stop-the-clocks/&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
+</description>
+        <pubDate>Mon, 01 Jun 2020 00:00:00 -0400</pubDate>
+        <link>/articles/20/stop-the-clocks</link>
+        <guid isPermaLink="true">/articles/20/stop-the-clocks</guid>
+        
+        
+        <category>writing</category>
+        
+        <category>covid19</category>
+        
+      </item>
+    
+      <item>
+        <title>Sense-Making, Pretzel-Baking, and Statistics of Pandemic Proportions</title>
+        <description>&lt;p&gt;A reflection on pandemic statistics, contributed to the Edinburgh Decameron project.&lt;/p&gt;
+
+&lt;p&gt;&lt;span class=&quot;newthought&quot;&gt;Article&lt;/span&gt;  available &lt;a href=&quot;https://blogs.ed.ac.uk/ed-decameron/sense-making-pretzel-baking-and-statistics-of-pandemic-proportions/&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
+</description>
+        <pubDate>Fri, 08 May 2020 00:00:00 -0400</pubDate>
+        <link>/articles/20/sense-making-pretzel-baking</link>
+        <guid isPermaLink="true">/articles/20/sense-making-pretzel-baking</guid>
+        
+        
+        <category>writing</category>
+        
+        <category>covid19</category>
+        
+      </item>
+    
+      <item>
+        <title>Counting Covid-19</title>
+        <description>&lt;p&gt;&lt;span class=&quot;newthought&quot;&gt;This project&lt;/span&gt;  consists of a series of interactive dashboards for exploring the Covid-19 pandemic by regional socio-economic and demographic statistics.&lt;/p&gt;
+
+&lt;!--more--&gt;
+&lt;p&gt;&lt;a href=&quot;https://mikaelaspringsteen.github.io/countingcovid19/&quot;&gt;This project&lt;/a&gt; enables the public to explore how social inequalities don’t simply vanish in crisis but can instead be magnified, allows policy makers to see where more resources may be necessary to combat the spread of the virus, and helps researchers with preliminary exploration of trends for their own work. Versions of the dashboard exist for exploring virus statistics at international and US state levels.
+&lt;br /&gt;
+&lt;br /&gt;&lt;/p&gt;
+&lt;figure&gt;&lt;figcaption&gt;&lt;/figcaption&gt;&lt;img src=&quot;/assets/img/posts/2020-04-29/international.png&quot; /&gt;&lt;/figure&gt;
+
+&lt;p&gt;Features may be added to the dashboards upon request, and data will be updated daily to remain in line with the latest  available information. Built on an open-source framework with R Shiny, all project code is available on GitHub.&lt;/p&gt;
+</description>
+        <pubDate>Wed, 29 Apr 2020 00:00:00 -0400</pubDate>
+        <link>/articles/20/counting-covid19</link>
+        <guid isPermaLink="true">/articles/20/counting-covid19</guid>
+        
+        
+        <category>R</category>
+        
+        <category>covid19</category>
+        
+      </item>
+    
   </channel>
 </rss>
